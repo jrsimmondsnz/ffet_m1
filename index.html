@@ -18,6 +18,7 @@
         if (event.data) {
           //document.getElementById("theLabel").innerHTML = event.data;
           userEmail = event.data;
+		  unityInstance.SendMessage('infoLoader', userEmail);
         }
       };
     </script>
