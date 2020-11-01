@@ -25,7 +25,8 @@
       // send message to the page code
       function aFunctionImplementedInHtmlFile(jsString) {
         canPost = true;
-		document.getElementById("label").innerHTML = userEmail;
+		document.getElementById("label").innerHTML = 'worked';
+		document.getElementById("label2").innerHTML = userEmail;
 		unityInstance.SendMessage('infoLoader', userEmail)
       }
     </script>
@@ -39,6 +40,7 @@
         <div class="title">FFET_M1</div>
       </div>
     </div>
-	<span id="theLabel" class="label">HTML Label 1</span>
+	<span id="theLabel" class="label">HTML Label 2</span>
+	<span id="theLabel" class="label2">LABEL 2</span>
   </body>
 </html>
