@@ -3,31 +3,28 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | FFET_M1</title>
+    <title>Unity WebGL Player | HTML_Test_19</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
     <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
     <script>
-      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/BUILDS.json", {onProgress: UnityProgress});
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Build19.json", {onProgress: UnityProgress});
     </script>
 	<script type="text/javascript">
       // when a message is received from the page code
-      var userEmail;
-	  var canPost = false;
+      var username = 12345678;
       window.onmessage = (event) => {
         if (event.data) {
           //document.getElementById("theLabel").innerHTML = event.data;
-          userEmail = event.data;
+          username = event.data;
+          document.getElementById("theLabel").innerHTML = username;
         }
       };
 
       // send message to the page code
-      function aFunctionImplementedInHtmlFile(jsString) {
-        canPost = true;
-		document.getElementById("theLabel").innerHTML = 'worked';
-		document.getElementById("theLabel2").innerHTML = userEmail;
-		unityInstance.SendMessage('infoLoader', userEmail)
+      function button_click() {
+        window.parent.postMessage(document.getElementById("theMessage").value, "https://www.fourfoxcreative.com/html-test");
       }
     </script>
   </head>
@@ -37,10 +34,16 @@
       <div class="footer">
         <div class="webgl-logo"></div>
         <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
-        <div class="title">FFET_M1</div>
+        <div class="title">HTML_Test_19</div>
       </div>
     </div>
-	<span id="theLabel" class="label">HTML Label 2</span>
-	<span id="theLabel2" class="label">LABEL 2</span>
+	<span id="theLabel" class="label">HTML Label 1</span>
+	<div style = "border:solid 1px black; width:200px; height:30pxl margin:auto; text-align:center" onClick= "unityInstance.SendMessage('JavascriptHook', 'TintRed')">RED</div>
+		<div style = "border:solid 1px black; width:200px; height:30pxl margin:auto; text-align:center" onClick= "unityInstance.SendMessage('JavascriptHook', 'TintGreen')">GREEN</div>
+		<div style = "border:solid 1px black; width:200px; height:30pxl margin:auto; text-align:center" onClick= "unityInstance.SendMessage('JavascriptHook', 'SetNumber', 500138)">Number</div>
+		<div style = "border:solid 1px black; width:200px; height:30pxl margin:auto; text-align:center" onClick= "unityInstance.SendMessage('JavascriptHook', 'SetText', 'Joe Simmonds')">String</div>
+  </body>
+</html>
+
   </body>
 </html>
