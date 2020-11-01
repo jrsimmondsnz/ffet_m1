@@ -25,8 +25,8 @@
       // send message to the page code
       function aFunctionImplementedInHtmlFile(jsString) {
         canPost = true;
-		document.getElementById("label").innerHTML = 'worked';
-		document.getElementById("label2").innerHTML = userEmail;
+		document.getElementById("theLabel").innerHTML = 'worked';
+		document.getElementById("theLabel2").innerHTML = userEmail;
 		unityInstance.SendMessage('infoLoader', userEmail)
       }
     </script>
@@ -41,6 +41,6 @@
       </div>
     </div>
 	<span id="theLabel" class="label">HTML Label 2</span>
-	<span id="theLabel" class="label2">LABEL 2</span>
+	<span id="theLabel2" class="label">LABEL 2</span>
   </body>
 </html>
