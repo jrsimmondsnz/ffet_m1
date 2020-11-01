@@ -66,5 +66,21 @@
       };
       document.body.appendChild(script);
     </script>
+    <script>var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Build19.json", {onProgress: UnityProgress});</script>
+    <script type="text/javascript">
+      // when a message is received from the page code
+      var userEmail = "";
+              if (event.data) {
+          //document.getElementById("theLabel").innerHTML = event.data;
+          userEmail = event.data;
+	        unityInstance.SendMessage('loader', 'SetEmail', event.data);
+          document.getElementById("theLabel").innerHTML = userEmail;
+        }
+      };
+		
+	function send_id(){
+		unityInstance.SendMessage('JavascriptHook', 'SetNumber', username);
+	}
+      </script>
   </body>
 </html>
